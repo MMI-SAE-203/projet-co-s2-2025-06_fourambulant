@@ -1,7 +1,16 @@
-import { defineConfig } from 'vite'
-import tailwindcss from '@tailwindcss/vite'
+// @ts-check
+import { defineConfig } from 'astro/config';
+import tailwindcss from '@tailwindcss/vite';
+
+// https://astro.build/config
 export default defineConfig({
-    plugins: [
-        tailwindcss(),
-    ],
-})
+  integrations: [],
+
+  experimental: {
+      svg: true
+  },
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
+});
