@@ -1,13 +1,16 @@
+---
+import Panier from "../assets/icons/panier.svg";
+import Logo from "../assets/icons/logo.svg";
+---
+
 <header
     class="bg-neutral-700 text-white px-6 py-4 flex items-center justify-between"
 >
     <!-- Logo + nav -->
     <div class="flex items-center gap-6">
-        <img
-            src="/assets/icons/logo.svg"
-            alt="Logo Le Four Ambulant"
-            class="h-[56px] w-auto"
-        />
+        <a href="/" aria-label="Accueil">
+            <Logo class="h-[56px] w-auto" />
+        </a>
 
         <nav class="hidden md:flex gap-6 text-[1.125rem] font-medium">
             <a href="/produits" class="hover:underline">Nos Produits</a>
@@ -16,8 +19,8 @@
         </nav>
     </div>
 
-    <!-- CTA + panier -->
-    <div class="flex items-center gap-4">
+    <!-- CTA + panier (Desktop) -->
+    <div class="hidden md:flex items-center gap-4">
         <a
             href="/rejoignez-nous"
             class="text-[1.125rem] font-medium flex items-center gap-1 hover:underline"
@@ -34,8 +37,39 @@
             <span class="text-xl">→</span>
         </a>
 
-        <a href="/panier">
-            <img src="/assets/icons/panier.svg" alt="Panier" class="h-8 w-8" />
+        <a href="/panier" aria-label="panier">
+            <Panier class="h-8 w-8" />
         </a>
+    </div>
+
+    <!-- Menu mobile pleine page -->
+    <div class="md:hidden">
+        <details class="relative group">
+            <summary class="list-none cursor-pointer text-3xl">☰</summary>
+            <div
+                class="fixed top-0 left-0 w-full h-full bg-neutral-800 z-50 flex flex-col items-center justify-center gap-6 text-xl p-6"
+            >
+                <button
+                    onclick="this.closest('details').removeAttribute('open')"
+                    class="absolute top-4 right-6 text-4xl text-white"
+                    >&times;</button
+                >
+                <a href="/produits" class="hover:underline">Nos Produits</a>
+                <a href="/reservation" class="hover:underline">Reservation</a>
+                <a href="/a-propos" class="hover:underline">À Propos</a>
+                <a href="/rejoignez-nous" class="hover:underline"
+                    >Rejoignez-nous →</a
+                >
+                <a
+                    href="/contact"
+                    class="border border-white rounded-full px-4 py-2 text-white hover:bg-white hover:text-neutral-800 transition-all"
+                >
+                    Contactez-nous →
+                </a>
+                <a href="/panier" aria-label="panier">
+                    <Panier class="h-8 w-8" />
+                </a>
+            </div>
+        </details>
     </div>
 </header>
