@@ -1,0 +1,109 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <section class="bg-[#fef1d5] py-12 text-center">
+        <h2 class="text-3xl font-bold">Contactez-nous</h2>
+        <p class="text-lg mt-2 text-gray-700">
+            Une Question ? Une Commande ? Nous Sommes à Votre Écoute !
+        </p>
+        <p class="mt-4 max-w-2xl mx-auto text-gray-800">
+            Que ce soit pour une commande, une demande d’information ou une
+            simple envie de discuter boulangerie, notre équipe est là pour vous
+            répondre.<br />
+            N’hésitez pas à nous contacter via l’un des moyens ci-dessous.
+        </p>
+    </section>
+
+    <section class="bg-white py-12 px-4">
+        <form class="max-w-2xl mx-auto space-y-6">
+            <input
+                type="text"
+                placeholder="Nom"
+                class="w-full border border-orange-300 shadow-md px-4 py-3 rounded-lg focus:outline-none"
+            />
+            <input
+                type="text"
+                placeholder="Prénom"
+                class="w-full border border-orange-300 shadow-md px-4 py-3 rounded-lg focus:outline-none"
+            />
+            <input
+                type="email"
+                placeholder="Adresse mail"
+                class="w-full border border-orange-300 shadow-md px-4 py-3 rounded-lg focus:outline-none"
+            />
+            <textarea
+                placeholder="Commentaire supplémentaire"
+                rows="6"
+                class="w-full border border-orange-300 px-4 py-3 rounded-lg bg-gray-200 focus:outline-none"
+            ></textarea>
+            <div class="text-right">
+                <button
+                    type="submit"
+                    class="bg-orange-400 text-white px-6 py-2 rounded hover:bg-orange-500 transition"
+                    >Envoyer</button
+                >
+            </div>
+        </form>
+    </section>
+
+    <section class="bg-white py-12 px-4">
+        <div class="max-w-2xl mx-auto">
+            <h3 class="text-xl font-semibold mb-4">Laissez nous un avis</h3>
+            <div class="flex items-center space-x-2 text-3xl mb-4">
+                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span
+                    >☆</span
+                >
+            </div>
+            <form class="space-y-4">
+                <input
+                    type="text"
+                    placeholder="Votre avis"
+                    class="w-full border border-orange-300 px-4 py-3 rounded-lg shadow-md focus:outline-none"
+                />
+                <div class="text-right">
+                    <button
+                        type="submit"
+                        class="bg-orange-400 text-white px-6 py-2 rounded hover:bg-orange-500 transition"
+                        >Envoyer</button
+                    >
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="bg-white py-12 px-4">
+        <div class="max-w-2xl mx-auto">
+            <h3 class="text-xl font-semibold mb-4">Nos Coordonnées</h3>
+            <p><strong>Adresse</strong> : ...</p>
+            <p><strong>Téléphone</strong> : 09 58 85 19 34</p>
+            <p><strong>Email</strong> : lefourambulant@gmail.com</p>
+
+            <h4 class="mt-6 mb-2 font-semibold">Nous suivre sur :</h4>
+            <div class="flex space-x-4 text-3xl">
+                <a href="#"
+                    ><img
+                        src="/assets/icons/X.svg"
+                        alt="X"
+                        class="w-8 h-8"
+                    /></a
+                >
+                <a href="#"
+                    ><img
+                        src="/assets/icons/facebook.svg"
+                        alt="Facebook"
+                        class="w-8 h-8"
+                    /></a
+                >
+                <a href="#"
+                    ><img
+                        src="/assets/icons/instagram.svg"
+                        alt="Instagram"
+                        class="w-8 h-8"
+                    /></a
+                >
+            </div>
+        </div>
+    </section>
+</Layout>

@@ -2,8 +2,95 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<layout> 
+<Layout>
+    <!-- Section 1 : Intro -->
+    <section class="bg-yellow-50 py-20 px-4 text-center">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">
+            Réservez Vos Produits<br />en Toute Simplicité
+        </h1>
+        <p class="max-w-2xl mx-auto text-lg">
+            Chez Le Four Ambulant, nous vous facilitons la vie en vous
+            permettant de réserver vos produits en ligne. Commandez à l’avance
+            et récupérez votre pain, vos viennoiseries et pâtisseries à l’heure
+            qui vous convient. Plus d’attente, plus de ruptures de stock, juste
+            du bon pain prêt à être dégusté !
+        </p>
+    </section>
 
+    <!-- Section 2 : Comment ça marche -->
+    <section class="py-16 px-4">
+        <h2 class="text-2xl font-bold mb-12 text-left">Comment ça marche ?</h2>
+        <div class="max-w-3xl mx-auto space-y-16">
+            <div class="flex items-start gap-4">
+                <p class="font-bold w-1/3">Choisissez vos produits :</p>
+                <p class="w-2/3">
+                    Parcourez notre sélection de pains, viennoiseries et
+                    gourmandises.
+                </p>
+            </div>
+            <div class="text-center text-orange-500 text-2xl">↓</div>
+            <div class="flex items-start gap-4">
+                <p class="font-bold w-1/3">Sélectionnez votre créneau :</p>
+                <p class="w-2/3">
+                    Indiquez la date et l’heure de retrait souhaitées.
+                </p>
+            </div>
+            <div class="text-center text-orange-500 text-2xl">↓</div>
+            <div class="flex items-start gap-4">
+                <p class="font-bold w-1/3">Passez commande :</p>
+                <p class="w-2/3">
+                    Validez votre réservation en quelques clics.
+                </p>
+            </div>
+            <div class="text-center text-orange-500 text-2xl">↓</div>
+            <div class="flex items-start gap-4">
+                <p class="font-bold w-1/3">Récupérez votre commande :</p>
+                <p class="w-2/3">
+                    Présentez-vous en boutique à l’horaire choisi, tout sera
+                    prêt pour vous !
+                </p>
+            </div>
+        </div>
+    </section>
 
-    
-</layout>
+    <!-- Section 3 : Réservez à l’avance -->
+    <section class="bg-[#8A4B2F] text-white py-16 px-4">
+        <h2 class="text-2xl font-semibold mb-4">Réservez à l’avance</h2>
+        <p class="mb-6">
+            Pour garantir la disponibilité de vos produits préférés, pensez à
+            réserver au moins 10 heures à l’avance.
+        </p>
+        <div>
+            <h3 class="font-semibold mb-2">Points de retrait</h3>
+            <ul class="space-y-2">
+                <li>[Nom du point de vente 1] — Adresse</li>
+                <li>[Nom du point de vente 2] — Adresse</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Section 4 : Pourquoi réserver ? -->
+    <section class="py-16 px-4">
+        <h2 class="text-2xl font-bold mb-8">Pourquoi réserver ?</h2>
+        <div class="max-w-3xl mx-auto space-y-8">
+            <div class="flex gap-4">
+                <p class="font-bold w-1/3">Plus de sérénité :</p>
+                <p class="w-2/3">
+                    Vos produits sont mis de côté rien que pour vous.
+                </p>
+            </div>
+            <div class="flex gap-4">
+                <p class="font-bold w-1/3">Gain de temps :</p>
+                <p class="w-2/3">Plus besoin de faire la queue.</p>
+            </div>
+            <div class="flex gap-4">
+                <p class="font-bold w-1/3">Fraîcheur garantie :</p>
+                <p class="w-2/3">Votre commande est préparée le jour même.</p>
+            </div>
+        </div>
+        <p class="mt-12 text-center text-lg">
+            Passez votre réservation dès maintenant et profitez du meilleur de
+            la boulangerie, sans contrainte !
+        </p>
+    </section>
+</Layout>
