@@ -13,16 +13,16 @@ import Logo from "../assets/icons/logo.svg";
         </a>
 
         <nav class="hidden md:flex gap-6 text-[1.125rem] font-medium">
-            <a href="/produits" class="hover:underline">Nos Produits</a>
-            <a href="/reservation" class="hover:underline">Reservation</a>
-            <a href="/a-propos" class="hover:underline">À Propos</a>
+            <a href="/produit" class="hover:underline">Nos Produits</a>
+            <a href="/reservez" class="hover:underline">Reservation</a>
+            <a href="/a_propos" class="hover:underline">À Propos</a>
         </nav>
     </div>
 
     <!-- CTA + panier (Desktop) -->
     <div class="hidden md:flex items-center gap-4">
         <a
-            href="/rejoignez-nous"
+            href="/connexion"
             class="text-[1.125rem] font-medium flex items-center gap-1 hover:underline"
         >
             Rejoignez-nous
@@ -30,14 +30,14 @@ import Logo from "../assets/icons/logo.svg";
         </a>
 
         <a
-            href="/contact"
+            href="/contactez_nous"
             class="border border-white rounded-full px-4 py-2 text-[1.125rem] font-medium flex items-center gap-2 hover:bg-white hover:text-neutral-800 transition-all"
         >
             Contactez-nous
             <span class="text-xl">→</span>
         </a>
 
-        <a href="/panier" aria-label="panier">
+        <a href="/votre_panier" aria-label="panier">
             <Panier class="h-8 w-8" />
         </a>
     </div>
@@ -54,19 +54,19 @@ import Logo from "../assets/icons/logo.svg";
                     class="absolute top-4 right-6 text-4xl text-white"
                     >&times;</button
                 >
-                <a href="/produits" class="hover:underline">Nos Produits</a>
-                <a href="/reservation" class="hover:underline">Reservation</a>
-                <a href="/a-propos" class="hover:underline">À Propos</a>
-                <a href="/rejoignez-nous" class="hover:underline"
+                <a href="/produit" class="hover:underline">Nos Produits</a>
+                <a href="/votre_panier" class="hover:underline">Reservation</a>
+                <a href="/a_propos" class="hover:underline">À Propos</a>
+                <a href="/connexion" class="hover:underline"
                     >Rejoignez-nous →</a
                 >
                 <a
-                    href="/contact"
+                    href="/contactez_nous"
                     class="border border-white rounded-full px-4 py-2 text-white hover:bg-white hover:text-neutral-800 transition-all"
                 >
                     Contactez-nous →
                 </a>
-                <a href="/panier" aria-label="panier">
+                <a href="/votre_panier" aria-label="panier">
                     <Panier class="h-8 w-8" />
                 </a>
             </div>

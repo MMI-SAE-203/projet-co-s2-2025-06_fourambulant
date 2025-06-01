@@ -2,4 +2,232 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout />
+<Layout>
+    <section class="bg-amber-50 text-neutral-900 px-6 py-12">
+        <div
+            class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12"
+        >
+            <div class="flex-1">
+                <h1 class="text-4xl font-bold mb-4">
+                    Bienvenue chez Le Four Ambulant
+                </h1>
+                <p class="mb-6 text-lg">
+                    Commandez votre pain artisanal en quelques clics et
+                    recevez-le directement devant votre porte, à Belfort,
+                    Montbéliard et dans leurs alentours. Fourambulant est un
+                    service local de commande de pain en ligne qui réinvente
+                    votre petit-déjeuner : du bon pain, préparé par des
+                    boulangers partenaires, livré chaque jour avec soin.
+                </p>
+                <a
+                    href="#"
+                    class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-md transition"
+                >
+                    Explorez nos offres
+                </a>
+                <div class="mt-8">
+                    <div class="flex items-center text-orange-500 text-xl mb-2">
+                        ★★★★★
+                    </div>
+                    <h3 class="font-semibold text-lg">
+                        Un service de livraison exceptionnel !
+                    </h3>
+                    <p class="text-sm text-gray-700">
+                        Grâce à Le Four Ambulant, j'ai découvert des
+                        boulangeries locales incroyables et je reçois du pain
+                        frais tous les matins.
+                    </p>
+                    <p class="mt-2 text-sm font-medium">— Marie Dupont</p>
+                </div>
+            </div>
+            <div class="flex-1">
+                <img
+                    src="/src/assets/images/boulangeri.webp"
+                    alt="Boulangerie"
+                    class="rounded-xl shadow-md"
+                />
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-amber-50 py-16">
+        <div class="max-w-7xl mx-auto text-center mb-12">
+            <p class="text-gray-600">
+                Profitez d'une livraison de pain artisanale en toute simplicité.
+            </p>
+            <h2 class="text-3xl font-bold mt-2">
+                Pourquoi choisir Le Four Ambulant ?
+            </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- Bloc répété -->
+            <div class="text-center px-4">
+                <img
+                    src="/src/assets/images/pourquoi_nous_choisir_1.webp"
+                    alt="Pain frais"
+                    class="rounded-lg mb-4"
+                />
+                <h3 class="font-semibold">Pain frais à votre porte</h3>
+                <p class="text-sm mt-2">
+                    Nos partenaires boulangers s'engagent à vous fournir du pain
+                    de qualité supérieure, préparé chaque matin.
+                </p>
+            </div>
+            <!-- À dupliquer pour chaque bloc -->
+            <div class="text-center px-4">
+                <img
+                    src="/src/assets/images/pourquoi_nous_choisir_2.webp"
+                    alt="Livraison de pain"
+                    class="rounded-lg mb-4"
+                />
+                <h3 class="font-semibold">Pain frais à votre porte</h3>
+                <p class="text-sm mt-2">
+                    Nos partenaires boulangers s'engagent à vous fournir du pain
+                    de qualité supérieure, préparé chaque matin.
+                </p>
+            </div>
+            <div class="text-center px-4">
+                <img
+                    src="/src/assets/images/pourquoi_nous_choisir_3.webp"
+                    alt="Rayons de pains"
+                    class="rounded-lg mb-4"
+                />
+                <h3 class="font-semibold">Pain frais à votre porte</h3>
+                <p class="text-sm mt-2">
+                    Nos partenaires boulangers s'engagent à vous fournir du pain
+                    de qualité supérieure, préparé chaque matin.
+                </p>
+            </div>
+        </div>
+
+        <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 max-w-6xl mx-auto text-center"
+        >
+            <div>
+                <div class="text-3xl mb-2">🧑‍🍳</div>
+                <h4 class="font-semibold">
+                    Visibilité accrue pour les boulangers
+                </h4>
+                <p class="text-sm">
+                    Augmentez votre clientèle grâce à notre plateforme qui met
+                    en avant vos produits.
+                </p>
+            </div>
+            <div>
+                <div class="text-3xl mb-2">🗓️</div>
+                <h4 class="font-semibold">Gestion simplifiée des commandes</h4>
+                <p class="text-sm">
+                    Recevez et gérez vos commandes en ligne avec facilité.
+                </p>
+            </div>
+            <div>
+                <div class="text-3xl mb-2">👍</div>
+                <h4 class="font-semibold">Soutien dédié</h4>
+                <p class="text-sm">
+                    Notre équipe est là pour vous aider à chaque étape de votre
+                    intégration.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-20">
+        <div
+            class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12"
+        >
+            <div class="flex-1">
+                <p class="text-orange-600 font-medium">
+                    Rejoignez notre équipe
+                </p>
+                <h2 class="text-3xl font-bold mb-4">
+                    Opportunités pour les livreurs
+                </h2>
+                <p class="mb-6">
+                    Devenez livreur chez Le Four Ambulant et profitez de
+                    nombreux avantages.
+                </p>
+                <ul class="space-y-2 mb-6">
+                    <li>✔️ Flexibilité horaire et revenus compétitifs</li>
+                    <li>✔️ Rejoignez une communauté de livreurs passionnés</li>
+                </ul>
+                <a
+                    href="#"
+                    class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-md transition"
+                >
+                    Rejoignez-nous →
+                </a>
+            </div>
+            <div class="flex-1">
+                <img
+                    src="/src/assets/images/boulangere.webp"
+                    alt="Livreuse souriante"
+                    class="rounded-xl shadow-md"
+                />
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-amber-50 py-16">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-orange-600 mb-6 font-semibold">Nos Produits</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <img
+                    src="/src/assets/images/pain.webp"
+                    alt="Baguette Tradition"
+                    class="rounded-lg shadow-md"
+                />
+                <img
+                    src="/src/assets/images/croissant.webp"
+                    alt="Croissant au Beurre"
+                    class="rounded-lg shadow-md"
+                />
+                <img
+                    src="/src/assets/images/pain_levain.webp"
+                    alt="Pain au Levain"
+                    class="rounded-lg shadow-md"
+                />
+                <img
+                    src="/src/assets/images/patisseries.webp"
+                    alt="Pâtisseries variées"
+                    class="rounded-lg shadow-md col-span-1 sm:col-span-2 md:col-span-1"
+                />
+            </div>
+            <div class="mt-12 text-center">
+                <div class="text-orange-500 text-xl mb-2">★★★★★</div>
+                <blockquote class="text-lg font-medium">
+                    Le Four Ambulant a transformé ma façon de consommer du pain.
+                    Je découvre chaque jour de nouvelles saveurs et je soutiens
+                    les boulangers locaux.
+                </blockquote>
+                <p class="mt-2 text-sm font-semibold">— Jean Martin</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-amber-100 py-10">
+        <div
+            class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between"
+        >
+            <div class="text-center md:text-left mb-6 md:mb-0">
+                <h3 class="text-2xl font-semibold mb-2">
+                    Un souci ? Contactez-nous !
+                </h3>
+                <div class="flex flex-col gap-2 text-sm text-gray-700">
+                    <p>
+                        <strong>Adresse :</strong> 25 rue des Prairis, 25420 Montbéliard
+                    </p>
+                    <p><strong>Numéro :</strong> 06 01 64 19 42</p>
+                    <p>
+                        <strong>Adresse mail :</strong> lefourambulant@gmail.com
+                    </p>
+                </div>
+            </div>
+            <a
+                href="#"
+                class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-md transition"
+            >
+                Contactez-nous →
+            </a>
+        </div>
+    </footer>
+</Layout>

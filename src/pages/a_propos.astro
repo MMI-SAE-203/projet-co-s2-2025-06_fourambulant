@@ -2,8 +2,100 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<layout> 
+<Layout>
+    <section class="bg-amber-50 px-6 py-12 text-center">
+        <h1 class="text-3xl font-bold">À Propos de Le Four Ambulant</h1>
+        <p class="text-lg mt-2 text-gray-600">
+            La Passion du Bon Pain, Tout Simplement
+        </p>
+        <p class="mt-6 max-w-3xl mx-auto text-gray-700">
+            Chez Le Four Ambulant, nous croyons que le bon pain est bien plus
+            qu’un simple aliment : c’est un savoir-faire, une tradition et un
+            plaisir à partager. C’est pourquoi nous mettons tout notre cœur et
+            notre expertise pour vous proposer des produits authentiques,
+            savoureux et de qualité.
+        </p>
+    </section>
 
+    <section
+        class="px-6 py-12 flex flex-col md:flex-row gap-8 items-center justify-between"
+    >
+        <div class="md:w-1/2">
+            <h2 class="text-2xl font-semibold mb-4">
+                Une Boulangerie au Service du Goût
+            </h2>
+            <p class="text-gray-700">
+                Nous sélectionnons avec soin nos ingrédients pour garantir
+                fraîcheur et excellence. Nos pains sont façonnés selon des
+                méthodes artisanales, avec des farines de qualité et une
+                fermentation lente pour révéler toute leur saveur. Nos
+                viennoiseries et pâtisseries sont préparées chaque jour avec des
+                matières premières rigoureusement choisies.
+            </p>
+        </div>
+        <div class="md:w-1/2">
+            <img
+                src="/src/assets/images/boulanger.webp"
+                alt="Image 1"
+                class="rounded-xl shadow-md"
+            />
+        </div>
+    </section>
 
-    
-</layout>
+    <section class="px-6 py-12 text-center">
+        <h2 class="text-2xl font-semibold mb-8">Nos Valeurs</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div>
+                <h3 class="font-semibold text-lg">Authenticité</h3>
+                <p class="text-gray-600">
+                    Des recettes traditionnelles revisitées avec passion.
+                </p>
+            </div>
+            <div>
+                <h3 class="font-semibold text-lg">Qualité</h3>
+                <p class="text-gray-600">
+                    Des ingrédients soigneusement sélectionnés.
+                </p>
+            </div>
+            <div>
+                <h3 class="font-semibold text-lg">Proximité</h3>
+                <p class="text-gray-600">
+                    Une équipe à l’écoute, toujours prête à vous conseiller.
+                </p>
+            </div>
+            <div>
+                <h3 class="font-semibold text-lg">Engagement</h3>
+                <p class="text-gray-600">
+                    Nous privilégions les circuits courts et les pratiques
+                    responsables.
+                </p>
+            </div>
+        </div>
+        <p class="mt-8 font-semibold text-xl">
+            Rejoignez-nous dans cette belle aventure gourmande !
+        </p>
+    </section>
+
+    <section class="px-6 py-12 text-center">
+        <p class="text-gray-700 mb-4">
+            Nous sommes fiers de partager notre passion avec vous, chaque jour,
+            à travers des produits frais et faits avec amour.
+        </p>
+        <div class="flex justify-center mb-8">
+            <img
+                src="/src/assets/images/boulanger_2.webp"
+                alt="Image 2"
+                class="rounded-xl shadow-md w-full max-w-md"
+            />
+        </div>
+        <p class="mb-4 font-semibold">Nous suivre sur :</p>
+        <div class="flex justify-center gap-6">
+            <img
+                src="/src/assets/icons/insta_noir.svg"
+                alt="Image 3"
+                class="w-10 h-10"
+            />
+            <!-- Ajoute les autres icônes si besoin (Facebook, Instagram...) -->
+        </div>
+    </section>
+</Layout>

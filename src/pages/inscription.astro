@@ -2,8 +2,121 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<layout> 
+<Layout>
+    <div
+        class="bg-[#fef1d8] rounded-md shadow-md px-6 py-4 w-full max-w-md mx-auto my-10"
+    >
+        <h2 class="text-xl font-bold mb-2">Inscription</h2>
+        <hr class="mb-4 border-gray-400" />
 
+        <!-- Réseaux sociaux -->
+        <div class="flex justify-center gap-6 mb-5">
+            <img
+                src="/src/assets/icons/google.svg"
+                alt="Google"
+                class="w-10 h-10 cursor-pointer shadow-sm rounded-sm"
+            />
+            <img
+                src="/src/assets/icons/facebook_connexion.svg"
+                alt="Facebook"
+                class="w-10 h-10 cursor-pointer shadow-sm rounded-sm"
+            />
+        </div>
 
-    
-</layout>
+        <!-- Formulaire -->
+        <form id="signup-form" class="flex flex-col gap-3">
+            <input
+                name="nom"
+                type="text"
+                placeholder="Nom"
+                required
+                class="rounded-md px-3 py-2 border border-black"
+            />
+            <input
+                name="prenom"
+                type="text"
+                placeholder="Prénom"
+                required
+                class="rounded-md px-3 py-2 border border-black"
+            />
+            <input
+                name="email"
+                type="email"
+                placeholder="Adresse mail"
+                required
+                class="rounded-md px-3 py-2 border border-black"
+            />
+            <input
+                name="mot_de_passe"
+                type="password"
+                placeholder="Mot de passe"
+                required
+                class="rounded-md px-3 py-2 border border-black"
+            />
+            <input
+                name="confirm_password"
+                type="password"
+                placeholder="Confirmation mot de passe"
+                required
+                class="rounded-md px-3 py-2 border border-black"
+            />
+
+            <button
+                type="submit"
+                class="bg-orange-400 text-white font-semibold py-2 px-4 mt-1 rounded-md w-fit self-end hover:bg-orange-500 transition"
+            >
+                Confirmer
+            </button>
+
+            <p id="message" class="text-center text-sm mt-2"></p>
+        </form>
+
+        <p class="text-gray-700 text-sm mt-6 text-center">
+            Déjà un compte ?
+            <a href="/connexion" class="underline hover:text-gray-900"
+                >Connectez-vous juste ici</a
+            >
+        </p>
+    </div>
+
+    <script type="module">
+        import PocketBase from "https://cdn.jsdelivr.net/npm/pocketbase@0.18.3/dist/pocketbase.es.mjs";
+
+        const pb = new PocketBase("http://localhost:8090"); // Remplace par l'URL de ton serveur si besoin
+
+        const form = document.getElementById("signup-form");
+        const message = document.getElementById("message");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const data = Object.fromEntries(new FormData(form));
+            if (data.mot_de_passe !== data.confirm_password) {
+                message.textContent =
+                    "❌ Les mots de passe ne correspondent pas.";
+                message.className = "text-red-600";
+                return;
+            }
+
+            const recordData = {
+                nom: data.nom,
+                prenom: data.prenom,
+                email: data.email,
+                mot_de_passe: data.mot_de_passe,
+            };
+
+            try {
+                await pb.collection("client").create(recordData);
+                message.textContent = "✅ Inscription réussie !";
+                message.className = "text-green-600";
+                form.reset();
+            } catch (error) {
+                console.error(error);
+                message.textContent =
+                    "❌ Erreur : " +
+                    (error?.message || "Échec de l’inscription.");
+                message.className = "text-red-600";
+            }
+        });
+    </script>
+</Layout>
