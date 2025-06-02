@@ -1,10 +1,101 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import ImgPb from "../../components/ImgPb.astro";
+import { getProduitsParCategorie } from "../../../backend/backend.mjs";
+
+const pains = await getProduitsParCategorie("pain");
+const viennoiseries = await getProduitsParCategorie("viennoiserie");
+const patisseries = await getProduitsParCategorie("patisserie");
 ---
 
-<layout> 
+<Layout>
+    <!-- Introduction -->
+    <section class="text-center py-12 bg-orange-50 px-4">
+        <h1 class="text-4xl font-bold mb-4">Nos produits</h1>
+        <p class="max-w-2xl mx-auto text-lg">
+            Chez Le Four Ambulant, nous mettons tout notre savoir-faire au
+            service de votre gourmandise. Nos produits sont réalisés avec des
+            ingrédients de qualité, un savoir-faire artisanal et une passion
+            inégalée pour la boulangerie. Découvrez notre gamme de délices frais
+            et savoureux.
+        </p>
 
+        <div class="flex flex-col md:flex-row gap-4 justify-center mt-10">
+            <a
+                href="#pain"
+                class="bg-orange-400 hover:bg-orange-500 text-white px-6 py-2 rounded font-semibold"
+                >Pain</a
+            >
+            <a
+                href="#viennoiserie"
+                class="bg-orange-400 hover:bg-orange-500 text-white px-6 py-2 rounded font-semibold"
+                >Viennoiseries</a
+            >
+            <a
+                href="#patisserie"
+                class="bg-orange-400 hover:bg-orange-500 text-white px-6 py-2 rounded font-semibold"
+                >Pâtisseries</a
+            >
+        </div>
+    </section>
 
+    <!-- SECTIONS PRODUITS -->
+    {
+        [
+            {
+                id: "pain",
+                title: "Pains",
+                subtitle: "L'essence du bon goût",
+                items: pains,
+            },
+            {
+                id: "viennoiserie",
+                title: "Viennoiseries",
+                subtitle: "Le plaisir du matin",
+                items: viennoiseries,
+            },
+            {
+                id: "patisserie",
+                title: "Pâtisseries",
+                subtitle: "Des douceurs pour chaque occasion",
+                items: patisseries,
+            },
+        ].map(({ id, title, subtitle, items }) => (
+            <section
+                id={id}
+                class={`py-16 ${id === "viennoiserie" ? "bg-orange-50" : ""}`}
+            >
+                <h2 class="text-3xl text-center font-semibold mb-2">
+                    {title} :
+                </h2>
+                <p class="text-center text-lg text-gray-600 mb-10">
+                    {subtitle}
+                </p>
 
-    
-</layout>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
+                    {items.map((item) => (
+                        <a
+                            href={`/produit/${item.id}`}
+                            class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200"
+                        >
+                            <div class="relative h-48 w-full">
+                                <ImgPb
+                                    record={item}
+                                    field="image"
+                                    alt={item.nom}
+                                    classPicture="h-full w-full"
+                                    classImg="h-full w-full object-cover"
+                                />
+                                <div class="absolute bottom-2 left-2 bg-black/50 text-white text-sm px-2 py-1 rounded">
+                                    {item.nom}
+                                </div>
+                            </div>
+                        </a>
+                    ))}
+                </div>
+
+                <p class="text-center mt-6 text-gray-600">Plus ...</p>
+            </section>
+        ))
+    }
+</Layout>
