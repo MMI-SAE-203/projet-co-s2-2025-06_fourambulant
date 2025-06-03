@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-    <main class="flex items-center justify-center min-h-screen ">
+    <main class="flex items-center justify-center min-h-screen">
         <div class="bg-[#fef1d8] p-8 rounded shadow-lg w-[400px] max-w-full">
             <h1 class="text-xl font-bold mb-4">Connexion</h1>
             <hr class="mb-4 border-gray-300" />
@@ -49,19 +49,21 @@ import Layout from "../layouts/Layout.astro";
                 <button
                     type="submit"
                     class="bg-orange-400 hover:bg-orange-500 text-white px-4 py-2 rounded-md float-right"
-                    >Confirmer</button
                 >
+                    Confirmer
+                </button>
             </form>
 
             <!-- Lien vers l'inscription -->
             <p class="mt-6 text-center text-sm text-gray-600">
                 Pas de compte ?
-                <a href="/inscription" class="underline text-gray-800"
-                    >Inscrivez-vous dès maintenant</a
-                >
+                <a href="/inscription" class="underline text-gray-800">
+                    Inscrivez-vous dès maintenant
+                </a>
             </p>
         </div>
 
+        <!-- Script de connexion -->
         <script type="module">
             document
                 .querySelector("#loginForm")
@@ -73,21 +75,32 @@ import Layout from "../layouts/Layout.astro";
 
                     try {
                         const res = await fetch(
-                            "http://127.0.0.1:8090/api/collections/client/auth-with-password",
+                            "https://pocketbaseprojets2.mouilleseaux-lhuillier-pierre.fr/api/collections/client/auth-with-password",
                             {
                                 method: "POST",
-                                headers: { "Content-Type": "application/json" },
+                                headers: {
+                                    "Content-Type": "application/json",
+                                },
                                 body: JSON.stringify({
                                     identity: email,
-                                    password,
+                                    password: password,
                                 }),
                             },
                         );
 
                         if (!res.ok) throw new Error("Identifiants incorrects");
+
                         const data = await res.json();
-                        alert("Connexion réussie !");
-                        console.log(data); // Tu peux sauvegarder le token ou rediriger ici
+
+                        // Stocker le token et les infos utilisateur dans localStorage
+                        localStorage.setItem("pb_token", data.token);
+                        localStorage.setItem(
+                            "user",
+                            JSON.stringify(data.record),
+                        );
+
+                        // Rediriger vers le profil
+                        window.location.href = "/profil";
                     } catch (err) {
                         alert("Erreur : " + err.message);
                     }

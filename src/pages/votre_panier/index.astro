@@ -2,8 +2,156 @@
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<layout> 
+<Layout>
+    <section class="py-12 px-4 max-w-5xl mx-auto">
+        <h1 class="text-4xl font-bold text-center mb-4">Votre panier</h1>
+        <p class="text-center mb-8">
+            Vérifiez vos produits avant de passer à votre réservation
+        </p>
 
+        <!-- Affichage dynamique -->
+        <div
+            id="panierProduits"
+            class="bg-orange-50 shadow-md p-4 rounded mb-6"
+        >
+            <h2 class="text-xl font-bold mb-2">Vos produits</h2>
+            <hr class="mb-4" />
+            <div id="listeProduits"></div>
+        </div>
 
+        <!-- Résumé prix -->
+        <div
+            id="resumePrix"
+            class="bg-orange-50 shadow-md p-4 rounded my-8 max-w-md mx-auto hidden"
+        >
+            <h2 class="text-xl font-bold mb-2">Prix</h2>
+            <hr class="mb-4" />
+            <p class="flex justify-between">
+                <span>Prix du produit :</span>
+                <span id="prixProduits">0.00 €</span>
+            </p>
+            <p class="flex justify-between">
+                <span>Prix de livraison :</span>
+                <span id="prixLivraison">2.50 €</span>
+            </p>
+            <p class="flex justify-between font-bold mt-2 text-lg">
+                <span>Total :</span>
+                <span id="prixTotal">0.00 €</span>
+            </p>
+        </div>
 
-</layout>
+        <div class="text-center">
+            <form method="post" action="/api/confirmer-commande">
+                <input
+                    type="hidden"
+                    id="commandeIdInput"
+                    name="commandeId"
+                    value=""
+                />
+                <button
+                    id="btnValider"
+                    class="bg-orange-500 text-white px-6 py-3 rounded hover:bg-orange-600 transition hidden"
+                >
+                    Passer à la réservation
+                </button>
+            </form>
+        </div>
+
+        <script type="module">
+            const token = localStorage.getItem("pb_token");
+            const user = JSON.parse(localStorage.getItem("user") || "null");
+
+            if (!token || !user) {
+                window.location.href = "/connexion";
+            }
+
+            const apiUrl =
+                "https://pocketbaseprojets2.mouilleseaux-lhuillier-pierre.fr/api";
+
+            const panierContainer = document.getElementById("listeProduits");
+            const prixProduits = document.getElementById("prixProduits");
+            const prixLivraison = document.getElementById("prixLivraison");
+            const prixTotal = document.getElementById("prixTotal");
+            const commandeIdInput = document.getElementById("commandeIdInput");
+            const resumePrix = document.getElementById("resumePrix");
+            const btnValider = document.getElementById("btnValider");
+
+            async function chargerPanier() {
+                try {
+                    // 1. Récupérer la commande pour l'email du client (champ "field")
+                    const resCommande = await fetch(
+                        `${apiUrl}/collections/commande/records?filter=field="${user.email}"&&statut="en cours de liverson"`,
+                        {
+                            headers: { Authorization: token },
+                        },
+                    );
+
+                    const dataCommande = await resCommande.json();
+                    const commande = dataCommande.items?.[0];
+
+                    if (!commande) {
+                        panierContainer.innerHTML =
+                            "<p class='text-center text-gray-500'>Aucune commande en cours.</p>";
+                        return;
+                    }
+
+                    commandeIdInput.value = commande.id;
+
+                    // 2. Récupérer les détails de commande
+                    const resDetails = await fetch(
+                        `${apiUrl}/collections/detail_commande/records?filter=id_commande="${commande.id}"&expand=id_pain`,
+                        {
+                            headers: { Authorization: token },
+                        },
+                    );
+
+                    const dataDetails = await resDetails.json();
+                    const produits = dataDetails.items;
+
+                    if (produits.length === 0) {
+                        panierContainer.innerHTML =
+                            "<p class='text-center text-gray-500'>Votre panier est vide.</p>";
+                        return;
+                    }
+
+                    // 3. Afficher produits
+                    let totalProduit = 0;
+                    const prixLivraisonVal = 2.5;
+
+                    panierContainer.innerHTML = produits
+                        .map((item) => {
+                            const pain = item.expand?.id_pain;
+                            const prix = pain?.prix_unitaire || 0;
+                            const quantite = item.quantite;
+                            const sousTotal = prix * quantite;
+                            totalProduit += sousTotal;
+
+                            return `
+                                <div class="mb-6 p-4 border rounded bg-white shadow-sm">
+                                    <h3 class="text-lg font-bold mb-2">${pain?.nom}</h3>
+                                    <p><strong>Quantité :</strong> ${quantite}</p>
+                                    <p><strong>Sous-total :</strong> ${sousTotal.toFixed(2)} €</p>
+                                    <p class="text-sm text-gray-500">${pain?.description ?? ""}</p>
+                                </div>
+                            `;
+                        })
+                        .join("");
+
+                    // 4. Afficher résumé
+                    const total = totalProduit + prixLivraisonVal;
+                    prixProduits.textContent = `${totalProduit.toFixed(2)} €`;
+                    prixLivraison.textContent = `${prixLivraisonVal.toFixed(2)} €`;
+                    prixTotal.textContent = `${total.toFixed(2)} €`;
+                    resumePrix.classList.remove("hidden");
+                    btnValider.classList.remove("hidden");
+                } catch (err) {
+                    panierContainer.innerHTML =
+                        "<p class='text-center text-red-500'>Erreur lors du chargement du panier.</p>";
+                    console.error(err);
+                }
+            }
+
+            chargerPanier();
+        </script>
+    </section>
+</Layout>

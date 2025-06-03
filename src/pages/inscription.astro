@@ -47,14 +47,28 @@ import Layout from "../layouts/Layout.astro";
                 class="rounded-md px-3 py-2 border border-black"
             />
             <input
-                name="mot_de_passe"
+                name="telephone"
+                type="tel"
+                placeholder="Téléphone"
+                required
+                class="rounded-md px-3 py-2 border border-black"
+            />
+            <input
+                name="adresse"
+                type="text"
+                placeholder="Adresse"
+                required
+                class="rounded-md px-3 py-2 border border-black"
+            />
+            <input
+                name="password"
                 type="password"
                 placeholder="Mot de passe"
                 required
                 class="rounded-md px-3 py-2 border border-black"
             />
             <input
-                name="confirm_password"
+                name="passwordConfirm"
                 type="password"
                 placeholder="Confirmation mot de passe"
                 required
@@ -82,7 +96,9 @@ import Layout from "../layouts/Layout.astro";
     <script type="module">
         import PocketBase from "https://cdn.jsdelivr.net/npm/pocketbase@0.18.3/dist/pocketbase.es.mjs";
 
-        const pb = new PocketBase("http://localhost:8090"); // Remplace par l'URL de ton serveur si besoin
+        const pb = new PocketBase(
+            "https://pocketbaseprojets2.mouilleseaux-lhuillier-pierre.fr",
+        );
 
         const form = document.getElementById("signup-form");
         const message = document.getElementById("message");
@@ -91,7 +107,8 @@ import Layout from "../layouts/Layout.astro";
             e.preventDefault();
 
             const data = Object.fromEntries(new FormData(form));
-            if (data.mot_de_passe !== data.confirm_password) {
+
+            if (data.password !== data.passwordConfirm) {
                 message.textContent =
                     "❌ Les mots de passe ne correspondent pas.";
                 message.className = "text-red-600";
@@ -99,10 +116,13 @@ import Layout from "../layouts/Layout.astro";
             }
 
             const recordData = {
+                email: data.email,
+                password: data.password,
+                passwordConfirm: data.passwordConfirm,
                 nom: data.nom,
                 prenom: data.prenom,
-                email: data.email,
-                mot_de_passe: data.mot_de_passe,
+                telephone: data.telephone,
+                adresse: data.adresse,
             };
 
             try {

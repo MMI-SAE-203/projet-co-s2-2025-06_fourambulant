@@ -5,7 +5,7 @@ import PocketBase from "pocketbase";
 
 // ✅ Fonction requise par Astro
 export async function getStaticPaths() {
-    const pb = new PocketBase("http://127.0.0.1:8090"); // ✅ déplacé ici
+    const pb = new PocketBase("https://pocketbaseprojets2.mouilleseaux-lhuillier-pierre.fr/",); // ✅ déplacé ici
     const records = await pb.collection("pain").getFullList();
 
     return records.map((record) => ({

@@ -1,7 +1,7 @@
 import PocketBase from 'pocketbase';
 
 // Connexion à PocketBase (modifie l'URL si ton instance est en ligne)
-export const pb = new PocketBase('http://127.0.0.1:8090');
+export const pb = new PocketBase('https://pocketbaseprojets2.mouilleseaux-lhuillier-pierre.fr/');
 
 // Fonction pour récupérer tous les produits d'une catégorie
 export async function getProduitsParCategorie(categorie) {
