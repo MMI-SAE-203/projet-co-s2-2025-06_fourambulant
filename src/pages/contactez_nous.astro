@@ -1,109 +1,119 @@
 ---
+// layouts
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-    <section class="bg-[#fef1d5] py-12 text-center">
-        <h2 class="text-3xl font-bold">Contactez-nous</h2>
-        <p class="text-lg mt-2 text-gray-700">
-            Une Question ? Une Commande ? Nous Sommes à Votre Écoute !
-        </p>
-        <p class="mt-4 max-w-2xl mx-auto text-gray-800">
-            Que ce soit pour une commande, une demande d’information ou une
-            simple envie de discuter boulangerie, notre équipe est là pour vous
-            répondre.<br />
-            N’hésitez pas à nous contacter via l’un des moyens ci-dessous.
-        </p>
-    </section>
+  <!-- Intro -->
+  <section class="py-12 text-center bg-[#fef1d5]">
+    <h2 class="text-3xl font-bold">Contactez-nous</h2>
+    <p class="text-lg mt-2 text-gray-700">Une Question ? Une Commande ? Nous sommes à votre écoute !</p>
+    <p class="mt-4 max-w-2xl mx-auto text-gray-800">
+      Que ce soit pour une commande, une information ou une envie de parler boulangerie, ce formulaire est là pour vous.
+    </p>
+  </section>
 
-    <section class="bg-white py-12 px-4">
-        <form class="max-w-2xl mx-auto space-y-6">
-            <input
-                type="text"
-                placeholder="Nom"
-                class="w-full border border-orange-300 shadow-md px-4 py-3 rounded-lg focus:outline-none"
-            />
-            <input
-                type="text"
-                placeholder="Prénom"
-                class="w-full border border-orange-300 shadow-md px-4 py-3 rounded-lg focus:outline-none"
-            />
-            <input
-                type="email"
-                placeholder="Adresse mail"
-                class="w-full border border-orange-300 shadow-md px-4 py-3 rounded-lg focus:outline-none"
-            />
-            <textarea
-                placeholder="Commentaire supplémentaire"
-                rows="6"
-                class="w-full border border-orange-300 px-4 py-3 rounded-lg bg-gray-200 focus:outline-none"
-            ></textarea>
-            <div class="text-right">
-                <button
-                    type="submit"
-                    class="bg-orange-400 text-white px-6 py-2 rounded hover:bg-orange-500 transition"
-                    >Envoyer</button
-                >
-            </div>
-        </form>
-    </section>
+  <!-- Formulaire -->
+  <section class="bg-white py-12 px-4">
+    <form id="contact-form" class="max-w-2xl mx-auto space-y-6">
+      <input
+        name="nom"
+        type="text"
+        placeholder="Nom"
+        required
+        class="w-full border border-orange-300 shadow-md px-4 py-3 rounded-lg focus:outline-none"
+      />
+      <input
+        name="prenom"
+        type="text"
+        placeholder="Prénom"
+        required
+        class="w-full border border-orange-300 shadow-md px-4 py-3 rounded-lg focus:outline-none"
+      />
+      <input
+        name="email"
+        type="email"
+        placeholder="Adresse mail"
+        required
+        class="w-full border border-orange-300 shadow-md px-4 py-3 rounded-lg focus:outline-none"
+      />
+      <textarea
+        name="commentaire"
+        placeholder="Commentaire supplémentaire"
+        rows="6"
+        required
+        class="w-full border border-orange-300 px-4 py-3 rounded-lg bg-gray-100 focus:outline-none"
+      ></textarea>
+      <input
+        name="avis"
+        type="text"
+        placeholder="Votre avis (optionnel)"
+        class="w-full border border-orange-300 px-4 py-3 rounded-lg shadow-md focus:outline-none"
+      />
 
-    <section class="bg-white py-12 px-4">
-        <div class="max-w-2xl mx-auto">
-            <h3 class="text-xl font-semibold mb-4">Laissez nous un avis</h3>
-            <div class="flex items-center space-x-2 text-3xl mb-4">
-                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span
-                    >☆</span
-                >
-            </div>
-            <form class="space-y-4">
-                <input
-                    type="text"
-                    placeholder="Votre avis"
-                    class="w-full border border-orange-300 px-4 py-3 rounded-lg shadow-md focus:outline-none"
-                />
-                <div class="text-right">
-                    <button
-                        type="submit"
-                        class="bg-orange-400 text-white px-6 py-2 rounded hover:bg-orange-500 transition"
-                        >Envoyer</button
-                    >
-                </div>
-            </form>
-        </div>
-    </section>
+      <div class="text-right">
+        <button
+          type="submit"
+          class="bg-orange-400 text-white px-6 py-2 rounded hover:bg-orange-500 transition"
+        >
+          Envoyer
+        </button>
+      </div>
 
-    <section class="bg-white py-12 px-4">
-        <div class="max-w-2xl mx-auto">
-            <h3 class="text-xl font-semibold mb-4">Nos Coordonnées</h3>
-            <p><strong>Adresse</strong> : 76 rue de Geneve</p>
-            <p><strong>Téléphone</strong> : 09 58 85 19 34</p>
-            <p><strong>Email</strong> : lefourambulant@gmail.com</p>
+      <!-- Message de confirmation -->
+      <p id="confirmation" class="text-green-600 text-center font-semibold hidden">
+        ✅ Votre message a bien été envoyé !
+      </p>
+    </form>
+  </section>
 
-            <h4 class="mt-6 mb-2 font-semibold">Nous suivre sur :</h4>
-            <div class="flex space-x-4 text-3xl">
-                <a href="#"
-                    ><img
-                        src="/src/assets/icons/x_noir.svg"
-                        alt="X"
-                        class="w-8 h-8"
-                    /></a
-                >
-                <a href="#"
-                    ><img
-                        src="/src/assets/icons/facbook_noir.svg"
-                        alt="Facebook"
-                        class="w-8 h-8"
-                    /></a
-                >
-                <a href="#"
-                    ><img
-                        src="/src/assets/icons/insta_noir.svg"
-                        alt="Instagram"
-                        class="w-8 h-8"
-                    /></a
-                >
-            </div>
-        </div>
-    </section>
+  <!-- Coordonnées -->
+  <section class="bg-white py-12 px-4">
+    <div class="max-w-2xl mx-auto">
+      <h3 class="text-xl font-semibold mb-4">Nos Coordonnées</h3>
+      <p><strong>Adresse</strong> : 76 rue de Genève</p>
+      <p><strong>Téléphone</strong> : 09 58 85 19 34</p>
+      <p><strong>Email</strong> : lefourambulant@gmail.com</p>
+
+      <h4 class="mt-6 mb-2 font-semibold">Nous suivre sur :</h4>
+      <div class="flex space-x-4 text-3xl">
+        <a href="#"><img src="/src/assets/icons/x_noir.svg" alt="X" class="w-8 h-8" /></a>
+        <a href="#"><img src="/src/assets/icons/facbook_noir.svg" alt="Facebook" class="w-8 h-8" /></a>
+        <a href="#"><img src="/src/assets/icons/insta_noir.svg" alt="Instagram" class="w-8 h-8" /></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script PocketBase -->
+  <script is:inline type="module">
+    import PocketBase from 'https://cdn.jsdelivr.net/npm/pocketbase-sdk@latest';
+
+    const pb = new PocketBase("https://pocketbaseprojets2.mouilleseaux-lhuillier-pierre.fr");
+    const form = document.getElementById("contact-form");
+    const confirmation = document.getElementById("confirmation");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const data = {
+        nom: form.nom.value,
+        prenom: form.prenom.value,
+        email: form.email.value,
+        commentaire: form.commentaire.value,
+        avis: form.avis?.value || ""
+      };
+
+      try {
+        await pb.collection("Contactez_nous").create(data);
+        form.reset();
+        confirmation.classList.remove("hidden");
+        setTimeout(() => {
+          confirmation.classList.add("hidden");
+        }, 5000);
+      } catch (err) {
+        console.error("Erreur PocketBase :", err);
+        alert("Erreur lors de l’envoi. Veuillez réessayer.");
+      }
+    });
+  </script>
 </Layout>
