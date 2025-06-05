@@ -1,0 +1,8 @@
+---
+// Picture.astro
+const { src, alt = "", class: className = "" } = Astro.props;
+---
+
+<picture>
+    <img src={src.src} alt={alt} class={className} loading="lazy" />
+</picture>

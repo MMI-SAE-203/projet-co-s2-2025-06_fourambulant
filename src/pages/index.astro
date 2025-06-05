@@ -1,6 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Picture } from "astro:assets";
+
+// Import des images avec astro:assets
+import boulangerie from "../assets/images/boulangeri.webp";
+import choix1 from "../assets/images/pourquoi_nous_choisir_1.webp";
+import choix2 from "../assets/images/pourquoi_nous_choisir_2.webp";
+import choix3 from "../assets/images/pourquoi_nous_choisir_3.webp";
+import boulangere from "../assets/images/boulangere.webp";
+import painTradition from "../assets/images/pain.webp";
+import croissant from "../assets/images/croissant.webp";
+import painLevain from "../assets/images/pain_levain.webp";
+import patisseries from "../assets/images/patisseries.webp";
 ---
 
 <Layout>
@@ -20,9 +31,8 @@ import { Picture } from "astro:assets";
                 <a
                     href="/produit"
                     class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-md transition"
+                    >Explorez nos offres</a
                 >
-                    Explorez nos offres
-                </a>
                 <div class="mt-8">
                     <div class="flex items-center text-orange-500 text-xl mb-2">
                         ★★★★★
@@ -39,7 +49,7 @@ import { Picture } from "astro:assets";
             </div>
             <div class="flex-1">
                 <Picture
-                    src="/src/assets/images/boulangeri.webp"
+                    src={boulangerie}
                     alt="Boulangerie"
                     class="rounded-xl shadow-md"
                 />
@@ -59,7 +69,7 @@ import { Picture } from "astro:assets";
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div class="text-center px-4">
                 <Picture
-                    src="/src/assets/images/pourquoi_nous_choisir_1.webp"
+                    src={choix1}
                     alt="Pain frais"
                     class="rounded-lg mb-4"
                 />
@@ -71,7 +81,7 @@ import { Picture } from "astro:assets";
             </div>
             <div class="text-center px-4">
                 <Picture
-                    src="/src/assets/images/pourquoi_nous_choisir_2.webp"
+                    src={choix2}
                     alt="Livraison de pain"
                     class="rounded-lg mb-4"
                 />
@@ -83,7 +93,7 @@ import { Picture } from "astro:assets";
             </div>
             <div class="text-center px-4">
                 <Picture
-                    src="/src/assets/images/pourquoi_nous_choisir_3.webp"
+                    src={choix3}
                     alt="Rayons de pains"
                     class="rounded-lg mb-4"
                 />
@@ -148,13 +158,12 @@ import { Picture } from "astro:assets";
                 <a
                     href="/inscription"
                     class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-md transition"
+                    >Rejoignez-nous →</a
                 >
-                    Rejoignez-nous →
-                </a>
             </div>
             <div class="flex-1">
                 <Picture
-                    src="/src/assets/images/boulangere.webp"
+                    src={boulangere}
                     alt="Livreuse souriante"
                     class="rounded-xl shadow-md"
                 />
@@ -168,28 +177,28 @@ import { Picture } from "astro:assets";
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <a href="/produit">
                     <Picture
-                        src="/src/assets/images/pain.webp"
+                        src={painTradition}
                         alt="Baguette Tradition"
                         class="rounded-lg shadow-md"
                     />
                 </a>
                 <a href="/produit">
                     <Picture
-                        src="/src/assets/images/croissant.webp"
+                        src={croissant}
                         alt="Croissant au Beurre"
                         class="rounded-lg shadow-md"
                     />
                 </a>
                 <a href="/produit">
                     <Picture
-                        src="/src/assets/images/pain_levain.webp"
+                        src={painLevain}
                         alt="Pain au Levain"
                         class="rounded-lg shadow-md"
                     />
                 </a>
                 <a href="/produit">
                     <Picture
-                        src="/src/assets/images/patisseries.webp"
+                        src={patisseries}
                         alt="Pâtisseries variées"
                         class="rounded-lg shadow-md col-span-1 sm:col-span-2 md:col-span-1"
                     />
@@ -226,9 +235,8 @@ import { Picture } from "astro:assets";
             <a
                 href="/contactez_nous"
                 class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-md transition"
+                >Contactez-nous →</a
             >
-                Contactez-nous →
-            </a>
         </div>
     </footer>
 </Layout>
