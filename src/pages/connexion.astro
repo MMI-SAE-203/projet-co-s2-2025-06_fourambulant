@@ -1,9 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Picture } from "astro:assets";
-
-import googleIcon from "../assets/icons/google.svg";
-import facebookIcon from "../assets/icons/facebook_connexion.svg";
 ---
 
 <Layout>
@@ -14,13 +10,13 @@ import facebookIcon from "../assets/icons/facebook_connexion.svg";
 
             <!-- Boutons de connexion Google/Facebook (non fonctionnels ici) -->
             <div class="flex justify-center gap-4 mb-6">
-                <Picture
-                    src={googleIcon}
+                <img
+                    src="/src/assets/icons/google.svg"
                     alt="Connexion Google"
                     class="w-10 h-10 cursor-pointer"
                 />
-                <Picture
-                    src={facebookIcon}
+                <img
+                    src="/src/assets/icons/facebook_connexion.svg"
                     alt="Connexion Facebook"
                     class="w-10 h-10 cursor-pointer"
                 />
