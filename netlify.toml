@@ -1,12 +1,9 @@
-[build.environment]
-  NODE_VERSION = "18.18.0"  # or any supported version
-  
 [build]
   publish = "dist"
   command = "npm run build"
 
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "18.18.0"
 
 [[plugins]]
   package = "@netlify/plugin-cache-core"
