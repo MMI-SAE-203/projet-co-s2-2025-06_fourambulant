@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "build": "npm run build --verbose",
     "astro": "astro"
   },
   "engines": {
