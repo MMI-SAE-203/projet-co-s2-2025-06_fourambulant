@@ -10,7 +10,8 @@ export default defineConfig({
   integrations: [react()],
 
   experimental: {
-      svg: true
+    svg: true,
+    session: true,
   },
 
   vite: {
