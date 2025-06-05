@@ -20,7 +20,7 @@ import Layout from "../layouts/Layout.astro";
                     boulangers partenaires, livré chaque jour avec soin.
                 </p>
                 <a
-                    href="#"
+                    href="/produit"
                     class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-md transition"
                 >
                     Explorez nos offres
@@ -151,7 +151,7 @@ import Layout from "../layouts/Layout.astro";
                     <li>✔️ Rejoignez une communauté de livreurs passionnés</li>
                 </ul>
                 <a
-                    href="#"
+                    href="/inscription"
                     class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-md transition"
                 >
                     Rejoignez-nous →
@@ -171,26 +171,34 @@ import Layout from "../layouts/Layout.astro";
         <div class="max-w-7xl mx-auto">
             <h2 class="text-orange-600 mb-6 font-semibold">Nos Produits</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <img
-                    src="/src/assets/images/pain.webp"
-                    alt="Baguette Tradition"
-                    class="rounded-lg shadow-md"
-                />
-                <img
-                    src="/src/assets/images/croissant.webp"
-                    alt="Croissant au Beurre"
-                    class="rounded-lg shadow-md"
-                />
-                <img
-                    src="/src/assets/images/pain_levain.webp"
-                    alt="Pain au Levain"
-                    class="rounded-lg shadow-md"
-                />
-                <img
-                    src="/src/assets/images/patisseries.webp"
-                    alt="Pâtisseries variées"
-                    class="rounded-lg shadow-md col-span-1 sm:col-span-2 md:col-span-1"
-                />
+                <a href="/produit">
+                    <img
+                        src="/src/assets/images/pain.webp"
+                        alt="Baguette Tradition"
+                        class="rounded-lg shadow-md"
+                    />
+                </a>
+                <a href="/produit">
+                    <img
+                        src="/src/assets/images/croissant.webp"
+                        alt="Croissant au Beurre"
+                        class="rounded-lg shadow-md"
+                    />
+                </a>
+                <a href="/produit">
+                    <img
+                        src="/src/assets/images/pain_levain.webp"
+                        alt="Pain au Levain"
+                        class="rounded-lg shadow-md"
+                    />
+                </a>
+                <a href="/produit">
+                    <img
+                        src="/src/assets/images/patisseries.webp"
+                        alt="Pâtisseries variées"
+                        class="rounded-lg shadow-md col-span-1 sm:col-span-2 md:col-span-1"
+                    />
+                </a>
             </div>
             <div class="mt-12 text-center">
                 <div class="text-orange-500 text-xl mb-2">★★★★★</div>
@@ -223,7 +231,7 @@ import Layout from "../layouts/Layout.astro";
                 </div>
             </div>
             <a
-                href="#"
+                href="/contactez_nous"
                 class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-md transition"
             >
                 Contactez-nous →
