@@ -1,5 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Picture } from "astro:assets";
+
+import mastercardIcon from "../assets/icons/mastercard.svg";
+import visaIcon from "../assets/icons/visa.svg";
+import paypalIcon from "../assets/icons/paypal.svg";
 ---
 
 <Layout>
@@ -27,9 +32,9 @@ import Layout from "../layouts/Layout.astro";
         <div class="bg-[#FFF3D6] rounded-md shadow-md p-6 mb-10">
             <h2 class="font-semibold text-lg mb-4">Mode de payement</h2>
             <div class="flex gap-4 justify-center items-center mb-4">
-                <img src="/src/assets/icons/mastercard.svg" alt="Mastercard" class="h-8" />
-                <img src="/src/assets/icons/visa.svg" alt="Visa" class="h-8" />
-                <img src="/src/assets/icons/paypal.svg" alt="Paypal" class="h-8" />
+                <Picture src={mastercardIcon} alt="Mastercard" class="h-8" />
+                <Picture src={visaIcon} alt="Visa" class="h-8" />
+                <Picture src={paypalIcon} alt="Paypal" class="h-8" />
             </div>
 
             <form class="space-y-4">
@@ -146,8 +151,9 @@ import Layout from "../layouts/Layout.astro";
         <div class="text-center mt-6">
             <button
                 class="bg-orange-500 text-white px-6 py-3 rounded-md font-semibold"
-                >Essayer BOULANGERIE+ gratuitement</button
             >
+                Essayer BOULANGERIE+ gratuitement
+            </button>
             <p class="text-sm text-gray-600 mt-2 underline">
                 Passer sans BOULANGERIE+
             </p>
