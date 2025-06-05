@@ -9,7 +9,7 @@
     "astro": "astro"
   },
   "engines": {
-  "node": "18.18.2"
+  "node": "18.18.0"
   },
   "dependencies": {
     "@astrojs/react": "^4.3.0",
