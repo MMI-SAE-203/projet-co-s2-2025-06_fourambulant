@@ -1,8 +1,10 @@
 ---
 import { pb } from "../../backend/backend.mjs";
+
 const {
     record,
     field = "imgUrl",
+    src, // supporte aussi les images locales
     alt,
     classPicture,
     classImg,
@@ -11,16 +13,17 @@ const {
 
 const imageUrl = record?.[field]
     ? pb.files.getURL(record, record[field], { thumb })
-    : null;
+    : (src ?? null);
 ---
 
 {
     imageUrl && (
-        <picture class={ classPicture }>
+        <picture class={classPicture}>
             <img
                 class={classImg}
                 alt={alt || "Image"}
                 src={imageUrl}
+                loading="lazy"
             />
         </picture>
     )
