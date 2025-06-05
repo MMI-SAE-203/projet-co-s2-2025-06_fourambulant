@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ImgPb from "../components/ImgPb.astro";
 ---
 
 <Layout>
@@ -38,11 +37,13 @@ import ImgPb from "../components/ImgPb.astro";
                 </div>
             </div>
             <div class="flex-1">
-                <ImgPb
-                    src="/src/assets/images/boulangeri.webp"
-                    alt="Boulangerie"
-                    classPicture="rounded-xl shadow-md"
-                />
+                <picture class="rounded-xl shadow-md">
+                    <img
+                        src="/src/assets/images/boulangeri.webp"
+                        alt="Boulangerie"
+                        loading="lazy"
+                    />
+                </picture>
             </div>
         </div>
     </section>
@@ -58,11 +59,13 @@ import ImgPb from "../components/ImgPb.astro";
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div class="text-center px-4">
-                <ImgPb
-                    src="/src/assets/images/pourquoi_nous_choisir_1.webp"
-                    alt="Pain frais"
-                    classPicture="rounded-lg mb-4"
-                />
+                <picture class="rounded-lg mb-4">
+                    <img
+                        src="/src/assets/images/pourquoi_nous_choisir_1.webp"
+                        alt="Pain frais"
+                        loading="lazy"
+                    />
+                </picture>
                 <h3 class="font-semibold">Pain frais à votre porte</h3>
                 <p class="text-sm mt-2">
                     Nos partenaires boulangers s'engagent à vous fournir du pain
@@ -70,11 +73,13 @@ import ImgPb from "../components/ImgPb.astro";
                 </p>
             </div>
             <div class="text-center px-4">
-                <ImgPb
-                    src="/src/assets/images/pourquoi_nous_choisir_2.webp"
-                    alt="Livraison de pain"
-                    classPicture="rounded-lg mb-4"
-                />
+                <picture class="rounded-lg mb-4">
+                    <img
+                        src="/src/assets/images/pourquoi_nous_choisir_2.webp"
+                        alt="Livraison de pain"
+                        loading="lazy"
+                    />
+                </picture>
                 <h3 class="font-semibold">Pain frais à votre porte</h3>
                 <p class="text-sm mt-2">
                     Nos partenaires boulangers s'engagent à vous fournir du pain
@@ -82,11 +87,13 @@ import ImgPb from "../components/ImgPb.astro";
                 </p>
             </div>
             <div class="text-center px-4">
-                <ImgPb
-                    src="/src/assets/images/pourquoi_nous_choisir_3.webp"
-                    alt="Rayons de pains"
-                    classPicture="rounded-lg mb-4"
-                />
+                <picture class="rounded-lg mb-4">
+                    <img
+                        src="/src/assets/images/pourquoi_nous_choisir_3.webp"
+                        alt="Rayons de pains"
+                        loading="lazy"
+                    />
+                </picture>
                 <h3 class="font-semibold">Pain frais à votre porte</h3>
                 <p class="text-sm mt-2">
                     Nos partenaires boulangers s'engagent à vous fournir du pain
@@ -153,11 +160,13 @@ import ImgPb from "../components/ImgPb.astro";
                 </a>
             </div>
             <div class="flex-1">
-                <ImgPb
-                    src="/src/assets/images/boulangere.webp"
-                    alt="Livreuse souriante"
-                    classPicture="rounded-xl shadow-md"
-                />
+                <picture class="rounded-xl shadow-md">
+                    <img
+                        src="/src/assets/images/boulangere.webp"
+                        alt="Livreuse souriante"
+                        loading="lazy"
+                    />
+                </picture>
             </div>
         </div>
     </section>
@@ -167,32 +176,42 @@ import ImgPb from "../components/ImgPb.astro";
             <h2 class="text-orange-600 mb-6 font-semibold">Nos Produits</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <a href="/produit">
-                    <ImgPb
-                        src="/src/assets/images/pain.webp"
-                        alt="Baguette Tradition"
-                        classPicture="rounded-lg shadow-md"
-                    />
+                    <picture class="rounded-lg shadow-md">
+                        <img
+                            src="/src/assets/images/pain.webp"
+                            alt="Baguette Tradition"
+                            loading="lazy"
+                        />
+                    </picture>
                 </a>
                 <a href="/produit">
-                    <ImgPb
-                        src="/src/assets/images/croissant.webp"
-                        alt="Croissant au Beurre"
-                        classPicture="rounded-lg shadow-md"
-                    />
+                    <picture class="rounded-lg shadow-md">
+                        <img
+                            src="/src/assets/images/croissant.webp"
+                            alt="Croissant au Beurre"
+                            loading="lazy"
+                        />
+                    </picture>
                 </a>
                 <a href="/produit">
-                    <ImgPb
-                        src="/src/assets/images/pain_levain.webp"
-                        alt="Pain au Levain"
-                        classPicture="rounded-lg shadow-md"
-                    />
+                    <picture class="rounded-lg shadow-md">
+                        <img
+                            src="/src/assets/images/pain_levain.webp"
+                            alt="Pain au Levain"
+                            loading="lazy"
+                        />
+                    </picture>
                 </a>
                 <a href="/produit">
-                    <ImgPb
-                        src="/src/assets/images/patisseries.webp"
-                        alt="Pâtisseries variées"
-                        classPicture="rounded-lg shadow-md col-span-1 sm:col-span-2 md:col-span-1"
-                    />
+                    <picture
+                        class="rounded-lg shadow-md col-span-1 sm:col-span-2 md:col-span-1"
+                    >
+                        <img
+                            src="/src/assets/images/patisseries.webp"
+                            alt="Pâtisseries variées"
+                            loading="lazy"
+                        />
+                    </picture>
                 </a>
             </div>
             <div class="mt-12 text-center">
