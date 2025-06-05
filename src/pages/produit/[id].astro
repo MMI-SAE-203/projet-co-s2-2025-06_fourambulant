@@ -4,7 +4,7 @@ import ImgPb from "../../components/ImgPb.astro";
 import PocketBase from "pocketbase";
 
 const pb = new PocketBase(
-    "https://pocketbaseprojets2.mouilleseaux-lhuillier-pierre.fr/",
+    "https://pocketbaseprojets2.mouilleseaux-lhuillier-pierre.fr/"
 );
 
 const { id } = Astro.params;
@@ -53,9 +53,18 @@ try {
                             </span>
                         </div>
 
+                        <!-- Bouton Ajouter au panier -->
+                        <button
+                            class="mt-4 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded"
+                            type="button"
+                            on:click={() => ajouterAuPanier("{produit.id}")}
+                        >
+                            Ajouter au panier
+                        </button>
+
                         <a
                             href="/produit"
-                            class="inline-block mt-6 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded"
+                            class="inline-block mt-6 ml-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded"
                         >
                             ← Retour aux produits
                         </a>
@@ -80,3 +89,12 @@ try {
         )
     }
 </Layout>
+
+<script type="module">
+    function ajouterAuPanier(idProduit) {
+        const panier = JSON.parse(localStorage.getItem("panier")) || [];
+        panier.push(idProduit);
+        localStorage.setItem("panier", JSON.stringify(panier));
+        alert("Produit ajouté au panier !");
+    }
+</script>
