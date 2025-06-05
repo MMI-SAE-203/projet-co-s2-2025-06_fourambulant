@@ -5,11 +5,11 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "build": "npm run build --verbose",
+    "preview": "astro preview",
     "astro": "astro"
   },
   "engines": {
-  "node": "18.20.2"
+    "node": "18.20.2"
   },
   "dependencies": {
     "@astrojs/react": "^4.3.0",
