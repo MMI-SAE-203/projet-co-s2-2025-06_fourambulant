@@ -3,7 +3,7 @@
 
 Éléménts à renseigner pour la soutenance :
 
-- [baguettenomade] Nom du projet : 
+- [fourambulant] Nom du projet : 
 - [ ] URL de la landing page :
 - [ ] URL de l'application finale :
 - [https://pocketbaseprojets2.mouilleseaux-lhuillier-pierre.fr/] URL de connexion au back office :
