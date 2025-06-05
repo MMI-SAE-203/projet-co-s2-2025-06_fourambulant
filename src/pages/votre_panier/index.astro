@@ -55,6 +55,14 @@ import Layout from "../../layouts/Layout.astro";
                     Passer à la réservation
                 </button>
             </form>
+
+            <!-- Nouveau bouton de paiement -->
+            <a
+                href="/paiement"
+                class="inline-block mt-4 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded transition"
+            >
+                Payer maintenant
+            </a>
         </div>
 
         <script type="module">
@@ -78,7 +86,6 @@ import Layout from "../../layouts/Layout.astro";
 
             async function chargerPanier() {
                 try {
-                    // 1. Récupérer la commande pour l'email du client (champ "field")
                     const resCommande = await fetch(
                         `${apiUrl}/collections/commande/records?filter=field="${user.email}"&&statut="en cours de liverson"`,
                         {
@@ -97,7 +104,6 @@ import Layout from "../../layouts/Layout.astro";
 
                     commandeIdInput.value = commande.id;
 
-                    // 2. Récupérer les détails de commande
                     const resDetails = await fetch(
                         `${apiUrl}/collections/detail_commande/records?filter=id_commande="${commande.id}"&expand=id_pain`,
                         {
@@ -114,7 +120,6 @@ import Layout from "../../layouts/Layout.astro";
                         return;
                     }
 
-                    // 3. Afficher produits
                     let totalProduit = 0;
                     const prixLivraisonVal = 2.5;
 
@@ -137,7 +142,6 @@ import Layout from "../../layouts/Layout.astro";
                         })
                         .join("");
 
-                    // 4. Afficher résumé
                     const total = totalProduit + prixLivraisonVal;
                     prixProduits.textContent = `${totalProduit.toFixed(2)} €`;
                     prixLivraison.textContent = `${prixLivraisonVal.toFixed(2)} €`;
