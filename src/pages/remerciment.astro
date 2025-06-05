@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Picture } from "astro:assets";
+
+import thankyouImg from "../assets/images/merci.webp";
+---
+
+<Layout>
+    <main
+        class="min-h-screen flex flex-col items-center justify-center bg-[#FFF3D6] px-4 text-center"
+    >
+        <Picture
+            src={thankyouImg}
+            alt="Merci pour votre commande"
+            class="w-full max-w-md mb-8 rounded-xl shadow-md"
+        />
+
+        <h1 class="text-3xl font-bold text-orange-600">
+            Merci pour votre réservation !
+        </h1>
+        <p class="mt-4 text-lg text-gray-700 max-w-xl">
+            Votre commande a bien été prise en compte. Nous allons la préparer
+            avec soin et vous serez livré à l’horaire choisi.
+        </p>
+
+        <a
+            href="/"
+            class="mt-8 inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-md"
+        >
+            Retour à l’accueil
+        </a>
+    </main>
+</Layout>

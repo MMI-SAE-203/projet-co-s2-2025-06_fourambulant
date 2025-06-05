@@ -4,7 +4,7 @@
 Éléménts à renseigner pour la soutenance :
 
 - [fourambulant] Nom du projet : 
-- [ ] URL de la landing page :
+- [https://www.figma.com/design/geXNXF437uAjLXk0pYvxUR/Le-Four-Ambulant?node-id=0-1&t=Rws0rihMSA68He99-0] URL de la landing page :
 - [http://fourambulant.mouilleseaux-lhuillier-pierre.fr/] URL de l'application finale :
 - [https://pocketbaseprojets2.mouilleseaux-lhuillier-pierre.fr/] URL de connexion au back office :
 - [pierre.mouilleseaux-lhuillier@edu.univ-fcomte.fr] Identifiant de connexion au backoffice :
