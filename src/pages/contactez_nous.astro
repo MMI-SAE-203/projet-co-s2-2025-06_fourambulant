@@ -1,15 +1,22 @@
 ---
-// layouts
 import Layout from "../layouts/Layout.astro";
+import { Picture } from "astro:assets";
+
+import xIcon from "../assets/icons/x_noir.svg";
+import facebookIcon from "../assets/icons/facbook_noir.svg";
+import instagramIcon from "../assets/icons/insta_noir.svg";
 ---
 
 <Layout>
   <!-- Intro -->
   <section class="py-12 text-center bg-[#fef1d5]">
     <h2 class="text-3xl font-bold">Contactez-nous</h2>
-    <p class="text-lg mt-2 text-gray-700">Une Question ? Une Commande ? Nous sommes à votre écoute !</p>
+    <p class="text-lg mt-2 text-gray-700">
+      Une Question ? Une Commande ? Nous sommes à votre écoute !
+    </p>
     <p class="mt-4 max-w-2xl mx-auto text-gray-800">
-      Que ce soit pour une commande, une information ou une envie de parler boulangerie, ce formulaire est là pour vous.
+      Que ce soit pour une commande, une information ou une envie de parler
+      boulangerie, ce formulaire est là pour vous.
     </p>
   </section>
 
@@ -55,13 +62,15 @@ import Layout from "../layouts/Layout.astro";
         <button
           type="submit"
           class="bg-orange-400 text-white px-6 py-2 rounded hover:bg-orange-500 transition"
+          >Envoyer</button
         >
-          Envoyer
-        </button>
       </div>
 
       <!-- Message de confirmation -->
-      <p id="confirmation" class="text-green-600 text-center font-semibold hidden">
+      <p
+        id="confirmation"
+        class="text-green-600 text-center font-semibold hidden"
+      >
         ✅ Votre message a bien été envoyé !
       </p>
     </form>
@@ -77,18 +86,24 @@ import Layout from "../layouts/Layout.astro";
 
       <h4 class="mt-6 mb-2 font-semibold">Nous suivre sur :</h4>
       <div class="flex space-x-4 text-3xl">
-        <a href="#"><img src="/src/assets/icons/x_noir.svg" alt="X" class="w-8 h-8" /></a>
-        <a href="#"><img src="/src/assets/icons/facbook_noir.svg" alt="Facebook" class="w-8 h-8" /></a>
-        <a href="#"><img src="/src/assets/icons/insta_noir.svg" alt="Instagram" class="w-8 h-8" /></a>
+        <a href="#"><Picture src={xIcon} alt="X" class="w-8 h-8" /></a>
+        <a href="#"
+          ><Picture src={facebookIcon} alt="Facebook" class="w-8 h-8" /></a
+        >
+        <a href="#"
+          ><Picture src={instagramIcon} alt="Instagram" class="w-8 h-8" /></a
+        >
       </div>
     </div>
   </section>
 
   <!-- Script PocketBase -->
   <script is:inline type="module">
-    import PocketBase from 'https://cdn.jsdelivr.net/npm/pocketbase-sdk@latest';
+    import PocketBase from "https://cdn.jsdelivr.net/npm/pocketbase-sdk@latest";
 
-    const pb = new PocketBase("https://pocketbaseprojets2.mouilleseaux-lhuillier-pierre.fr");
+    const pb = new PocketBase(
+      "https://pocketbaseprojets2.mouilleseaux-lhuillier-pierre.fr",
+    );
     const form = document.getElementById("contact-form");
     const confirmation = document.getElementById("confirmation");
 
@@ -100,7 +115,7 @@ import Layout from "../layouts/Layout.astro";
         prenom: form.prenom.value,
         email: form.email.value,
         commentaire: form.commentaire.value,
-        avis: form.avis?.value || ""
+        avis: form.avis?.value || "",
       };
 
       try {

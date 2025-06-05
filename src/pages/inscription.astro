@@ -1,5 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Picture } from "astro:assets";
+
+import googleIcon from "../assets/icons/google.svg";
+import facebookIcon from "../assets/icons/facebook_connexion.svg";
 ---
 
 <Layout>
@@ -11,13 +15,13 @@ import Layout from "../layouts/Layout.astro";
 
         <!-- Réseaux sociaux -->
         <div class="flex justify-center gap-6 mb-5">
-            <img
-                src="/src/assets/icons/google.svg"
+            <Picture
+                src={googleIcon}
                 alt="Google"
                 class="w-10 h-10 cursor-pointer shadow-sm rounded-sm"
             />
-            <img
-                src="/src/assets/icons/facebook_connexion.svg"
+            <Picture
+                src={facebookIcon}
                 alt="Facebook"
                 class="w-10 h-10 cursor-pointer shadow-sm rounded-sm"
             />
@@ -99,7 +103,6 @@ import Layout from "../layouts/Layout.astro";
         const pb = new PocketBase(
             "https://pocketbaseprojets2.mouilleseaux-lhuillier-pierre.fr",
         );
-
         const form = document.getElementById("signup-form");
         const message = document.getElementById("message");
 
