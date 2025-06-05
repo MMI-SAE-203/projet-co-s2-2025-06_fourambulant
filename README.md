@@ -5,7 +5,7 @@
 
 - [fourambulant] Nom du projet : 
 - [ ] URL de la landing page :
-- [ ] URL de l'application finale :
+- [http://fourambulant.mouilleseaux-lhuillier-pierre.fr/] URL de l'application finale :
 - [https://pocketbaseprojets2.mouilleseaux-lhuillier-pierre.fr/] URL de connexion au back office :
 - [pierre.mouilleseaux-lhuillier@edu.univ-fcomte.fr] Identifiant de connexion au backoffice :
 - [0123456789] Mot de passe de connexion au backoffice :
